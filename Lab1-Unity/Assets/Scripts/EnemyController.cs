@@ -29,17 +29,21 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private WhereToRun whereToRun = WhereToRun.OppositeDirection;
     [SerializeField] private bool triggerIfClose = true;
     [SerializeField] [Range(0, 10f)] private float triggerDistance = 2f;
+    [SerializeField] private bool triggerWithCone = false;
+    [SerializeField] private float coneLength = 3f;
+    [SerializeField] [Range(0, 180f)] private float coneAngle = 90f;
     [SerializeField] private IdleBehaviour idleBehaviour = IdleBehaviour.StayStill;
+    [SerializeField] [Range(0, 10f)] private float randomMovementDistance = 5f;
     [SerializeField] private bool panicSpeed = false;
     [SerializeField] [Range(-3f, 3f)] private float panicSpeedMultiplier = 0f;
 
     private float nextWaypointDistance = .5f;
-    private float randomMovementDistance = 4f;
     private int currentWaypoint = 0;
     private bool reachedEndOfPath = false;
     private Path path;
     private Vector3 target;
-    
+    private bool triggered = false;
+
     private void Start()
     {
         t = GetComponent<Transform>();
@@ -95,7 +99,7 @@ public class EnemyController : MonoBehaviour
         {
             var velocity = direction * movementSpeed;
 
-            if (panicSpeed)
+            if (panicSpeed && triggered)
                 velocity *= panicSpeedMultiplier;
 
             rb.velocity = Vector3.SmoothDamp(rb.velocity, velocity * movementSpeed * Time.fixedDeltaTime, ref zeroVelocity, movementSmoothing);
@@ -136,20 +140,19 @@ public class EnemyController : MonoBehaviour
 
     private void ChooseDestination()
     {
-        if (triggerIfClose && (playerTransform.position - t.position).magnitude > triggerDistance)
-            switch (idleBehaviour)
-            {
-                case IdleBehaviour.StayStill:
-                    if (chaseOrChased == ChaseBehaviour.ChasePlayer || reachedEndOfPath)
-                        target = t.position;
-                    break;
-                case IdleBehaviour.MoveRandomly:
-                    if (chaseOrChased == ChaseBehaviour.ChasePlayer || reachedEndOfPath)
-                        target = ChooseRandomDestination();
-                    break;
-            }
-        else
-        {
+        triggered = false;
+
+        if (triggerIfClose && (playerTransform.position - t.position).magnitude < triggerDistance)
+            triggered = true;
+
+        if (!triggerWithCone || PlayerInConesight())
+            triggered = true;
+
+        if (!triggerIfClose && !triggerWithCone)
+            triggered = true;
+
+
+        if (triggered)
             if (chaseOrChased == ChaseBehaviour.ChasePlayer)
                 target = playerTransform.position;
             else
@@ -163,7 +166,33 @@ public class EnemyController : MonoBehaviour
                             target = ChooseCloseObstacle();
                         break;
                 }
-        }
+        else
+            switch (idleBehaviour)
+            {
+                case IdleBehaviour.StayStill:
+                    if (chaseOrChased == ChaseBehaviour.ChasePlayer || reachedEndOfPath)
+                        target = t.position;
+                    break;
+                case IdleBehaviour.MoveRandomly:
+                    if (chaseOrChased == ChaseBehaviour.ChasePlayer || reachedEndOfPath)
+                        target = ChooseRandomDestination();
+                    break;
+            }
+    }
+
+    private bool PlayerInConesight()
+    {
+        Collider2D player;
+        LayerMask playerMask = LayerMask.GetMask("Player");
+        Vector2 front = art.right;
+
+        player = Physics2D.OverlapCircle(t.position, coneLength, playerMask);
+
+        if (player == null)
+            return false;
+
+        Vector2 dirToPlaywer = (player.transform.position - t.position).normalized;
+        return Vector2.Angle(front, dirToPlaywer) < coneAngle / 2;
     }
 
     private Vector2 ChooseCloseObstacle()
@@ -198,7 +227,7 @@ public class EnemyController : MonoBehaviour
     {
         Vector2 destination = t.position;
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
             Vector2 dir = (t.position - playerTransform.position).normalized;
             destination = (Vector2)t.position + dir * randomMovementDistance;
@@ -214,14 +243,16 @@ public class EnemyController : MonoBehaviour
 
     private Vector2 ChooseRandomDestination()
     {
-        Vector2 destination;
+        Vector2 destination = t.position;
 
-        do
+        for (int i = 0; i < 20; i++)
         {
             Vector2 dir = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10)).normalized;
             destination = (Vector2)t.position + dir * randomMovementDistance;
 
-        } while (IsReachable(destination));
+            if (IsReachable(destination))
+                break;
+        } 
 
         return destination;
     }
@@ -240,5 +271,6 @@ public class EnemyController : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, triggerDistance);
+        Gizmos.DrawLine(transform.position, transform.position + transform.GetChild(0).right * coneLength);
     }
 }

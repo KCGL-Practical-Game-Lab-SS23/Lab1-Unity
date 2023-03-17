@@ -1544,23 +1544,35 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: whereToRun
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: chaseOrChased
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: movementSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: triggerDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerWithCone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeedMultiplier
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
@@ -2215,23 +2227,35 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: whereToRun
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: chaseOrChased
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: movementSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: triggerDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerWithCone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeedMultiplier
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
@@ -2408,23 +2432,35 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: whereToRun
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: chaseOrChased
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: movementSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: triggerDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerWithCone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeedMultiplier
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
@@ -3050,23 +3086,35 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: whereToRun
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: chaseOrChased
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: movementSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: triggerDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerWithCone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeedMultiplier
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
@@ -3664,23 +3712,35 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: whereToRun
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: chaseOrChased
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: movementSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: triggerDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerWithCone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeedMultiplier
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
@@ -4233,23 +4293,35 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: whereToRun
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: chaseOrChased
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: movementSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: triggerDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerWithCone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: panicSpeedMultiplier
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
