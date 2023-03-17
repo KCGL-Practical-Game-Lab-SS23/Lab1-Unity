@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.Rendering.Universal;
 
 public class EnemyController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class EnemyController : MonoBehaviour
     private Seeker seeker;
     //private Animator a;
     private Transform art;
+    private Light2D light;
 
     [Header("Movement")]
     [SerializeField] private bool canMove = true;
@@ -51,7 +53,11 @@ public class EnemyController : MonoBehaviour
         seeker = GetComponent<Seeker>();
         //a = GetComponent<Animator>();
         art = t.GetChild(0).GetComponent<Transform>();
-        
+        light = art.GetChild(0).GetComponent<Light2D>();
+
+        light.pointLightOuterRadius = coneLength;
+        light.pointLightOuterAngle = coneAngle;
+
         playerTransform = GameObject.Find("Player").GetComponent<Transform>();
 
         if (chaseOrChased == ChaseBehaviour.ChasePlayer)
@@ -78,6 +84,11 @@ public class EnemyController : MonoBehaviour
 
             art.rotation = Quaternion.Euler(0, 0, angle);
         }
+
+        if (triggered)
+            light.color = Color.red;
+        else
+            light.color = Color.white;
     }
 
     private void FixedUpdate()
