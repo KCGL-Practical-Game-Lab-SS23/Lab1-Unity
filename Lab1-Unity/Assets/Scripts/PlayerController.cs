@@ -18,11 +18,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementSpeed = 10f;
     [SerializeField] private float movementSmoothing = 0.5f;
 
-    //[Header("Interaction")]
-    //[SerializeField] private bool canTouchEnemies = true;
-
-
-
     private void Start()
     {
         t = GetComponent<Transform>();
@@ -36,11 +31,14 @@ public class PlayerController : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        float angle = Vector3.Angle(Vector3.right, rb.velocity);
-        if (rb.velocity.y < 0)
-            angle = 360 - angle;
+        if (rb.velocity != Vector2.zero)
+        {
+            float angle = Vector3.Angle(Vector3.right, rb.velocity);
+            if (rb.velocity.y < 0)
+                angle = 360 - angle;
 
-        art.rotation = Quaternion.Euler(0, 0, angle);
+            art.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
     private void FixedUpdate()

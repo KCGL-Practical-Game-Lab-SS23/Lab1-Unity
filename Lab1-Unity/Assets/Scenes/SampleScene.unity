@@ -1544,8 +1544,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
+      propertyPath: whereToRun
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: movementSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: m_Name
@@ -2199,8 +2215,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
+      propertyPath: whereToRun
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: movementSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: m_Name
@@ -2376,8 +2408,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
+      propertyPath: whereToRun
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: movementSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: m_Name
@@ -2963,11 +3011,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434832, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.8547544
+      value: -3.1452456
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434832, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.044970468
+      value: 2.7949705
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434832, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3002,8 +3050,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
+      propertyPath: whereToRun
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: movementSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: m_Name
@@ -3600,8 +3664,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
+      propertyPath: whereToRun
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: movementSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: m_Name
@@ -4153,8 +4233,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
-      propertyPath: idleBehaviour
+      propertyPath: whereToRun
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: chaseOrChased
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: idleBehaviour
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: movementSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068647614730434833, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
+      propertyPath: triggerDistance
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5068647614730434834, guid: b6284afd1c987a542a230f14b21b52f8, type: 3}
       propertyPath: m_Name

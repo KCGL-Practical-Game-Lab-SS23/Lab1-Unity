@@ -40,10 +40,6 @@ public class EnemyController : MonoBehaviour
     private Path path;
     private Vector3 target;
     
-    
-
-
-
     private void Start()
     {
         t = GetComponent<Transform>();
@@ -56,6 +52,8 @@ public class EnemyController : MonoBehaviour
 
         if (chaseOrChased == ChaseBehaviour.ChasePlayer)
             target = playerTransform.position;
+        else
+            target = t.position;
 
         ChooseDestination();
         InvokeRepeating("UpdatePath", 0f, .5f);
@@ -68,11 +66,14 @@ public class EnemyController : MonoBehaviour
         if (path != null && currentWaypoint < path.vectorPath.Count)
             direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
 
-        float angle = Vector3.Angle(Vector3.right, rb.velocity);
-        if (rb.velocity.y < 0)
-            angle = 360 - angle;
+        if (rb.velocity != Vector2.zero)
+        {
+            float angle = Vector3.Angle(Vector3.right, rb.velocity);
+            if (rb.velocity.y < 0)
+                angle = 360 - angle;
 
-        art.rotation = Quaternion.Euler(0, 0, angle);
+            art.rotation = Quaternion.Euler(0, 0, angle);
+        }
     }
 
     private void FixedUpdate()
@@ -158,16 +159,44 @@ public class EnemyController : MonoBehaviour
                         target = ChooseFarDestination();
                         break;
                     case WhereToRun.ToClosestObstacle:
+                        if (reachedEndOfPath)
+                            target = ChooseCloseObstacle();
                         break;
                 }
         }
     }
 
+    private Vector2 ChooseCloseObstacle()
+    {
+        Collider2D obstacle = null;
+        Vector2 destination = t.position;
+        LayerMask wallMask = LayerMask.GetMask("Wall");
+
+        for (float f = .1f; f < 10f; f += .1f)
+        {
+            obstacle = Physics2D.OverlapCircle(t.position, f, wallMask);
+
+            if (obstacle != null)
+                break;            
+        }
+
+        for (int i = 0; i < 10; i++)
+        {
+            Vector2 dir = (obstacle.transform.position - t.position) + (t.position - playerTransform.position) * 2;
+            destination = (Vector2)t.position + dir;
+
+            destination += new Vector2(Random.Range(-10, 10), Random.Range(-10, 10)).normalized;
+
+            if (IsReachable(destination))
+                break;
+        }
+
+        return destination;
+    }
+
     private Vector2 ChooseFarDestination()
     {
         Vector2 destination = t.position;
-        LayerMask wallMask = LayerMask.GetMask("Wall");
-        LayerMask groundMask = LayerMask.GetMask("Ground");
 
         for (int i = 0; i < 10; i++)
         {
@@ -176,10 +205,7 @@ public class EnemyController : MonoBehaviour
 
             destination += new Vector2(Random.Range(-10, 10), Random.Range(-10, 10)).normalized;
 
-            Collider2D hitGround = Physics2D.OverlapCircle(destination, .1f, groundMask);
-            Collider2D hitWall = Physics2D.OverlapCircle(destination, .1f, wallMask);
-
-            if (hitGround != null && hitWall == null)
+            if (IsReachable(destination))
                 break;
         }
 
@@ -189,23 +215,26 @@ public class EnemyController : MonoBehaviour
     private Vector2 ChooseRandomDestination()
     {
         Vector2 destination;
-        bool isReachable;
-        LayerMask wallMask = LayerMask.GetMask("Wall");
-        LayerMask groundMask = LayerMask.GetMask("Ground");
 
         do
         {
             Vector2 dir = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10)).normalized;
             destination = (Vector2)t.position + dir * randomMovementDistance;
 
-            Collider2D hitGround = Physics2D.OverlapCircle(destination, .1f, groundMask);
-            Collider2D hitWall = Physics2D.OverlapCircle(destination, .1f, wallMask);
-
-            isReachable = hitGround != null && hitWall == null;     
-
-        } while (isReachable);
+        } while (IsReachable(destination));
 
         return destination;
+    }
+
+    private bool IsReachable(Vector2 position)
+    {
+        LayerMask wallMask = LayerMask.GetMask("Wall");
+        LayerMask groundMask = LayerMask.GetMask("Ground");
+
+        Collider2D hitGround = Physics2D.OverlapCircle(position, .1f, groundMask);
+        Collider2D hitWall = Physics2D.OverlapCircle(position, .1f, wallMask);
+
+        return hitGround != null && hitWall == null;
     }
 
     private void OnDrawGizmosSelected()
