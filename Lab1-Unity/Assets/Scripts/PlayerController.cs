@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Transform t;
     private Rigidbody2D rb;
     //private Animator a;
-    //private SpriteRenderer sr;
+    private Transform art;
 
     private float horizontal;
     private float vertical;
@@ -28,13 +28,19 @@ public class PlayerController : MonoBehaviour
         t = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         //a = GetComponent<Animator>();
-        //sr = GetComponent<SpriteRenderer>();
+        art = t.GetChild(0).GetComponent<Transform>();
     }
 
     private void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
+
+        float angle = Vector3.Angle(Vector3.right, rb.velocity);
+        if (rb.velocity.y < 0)
+            angle = 360 - angle;
+
+        art.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     private void FixedUpdate()
